@@ -54,6 +54,14 @@ body {
   color: white;
 }
 
+.logout {
+  position: absolute;
+  background-color: black;
+  top: 1em;
+  right: 3em;
+}
+
+
 .footer {
   width: 100%;
   background-color: #385461;

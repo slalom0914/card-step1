@@ -9,12 +9,12 @@ router.get('/', function(req, res, next) {
 //로그인에 대한 상태값을 가져오는 방법은
 //1)세션, 2)query string, 3)localStoreage
 router.get('/maker', function(req, res, next){
-  const email = req.query.email
-  console.log(email);
-  if(!email){
+  const userId = req.query.id
+  console.log(userId);
+  if(!userId){
     return res.redirect('/')
   }
-  res.render('index', { title: 'Maker', pageName: 'maker.ejs', email:email })
+  res.render('index', { title: 'Maker', pageName: 'maker.ejs', userId:userId })
 })
 
 module.exports = router;
