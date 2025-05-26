@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
 
 //로그인에 대한 상태값을 가져오는 방법은
 //1)세션, 2)query string, 3)localStoreage
+//goToMaker() -> maker?id=userId
 router.get('/maker', function(req, res, next){
   const userId = req.query.id
   console.log(userId);

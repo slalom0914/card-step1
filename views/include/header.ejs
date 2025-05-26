@@ -2,9 +2,9 @@
   const userId = window.localStorage.getItem('userId')
   console.log(userId);
   if(userId){//구글 로그인이 성공하면 localStorage에 userId를 담는다.
-    document.write('<button class="btn logout" href="/logout">로그아웃</button>)
+    document.write('<button id="logout" class="btn logout" href="/logout">로그아웃</button>')
   }else{
-    document.write('<button class="btn login" href="/login">로그인</button>)
+    document.write('<button class="btn login" href="/login">로그인</button>')
   }
 </script>
 <header class="header">
