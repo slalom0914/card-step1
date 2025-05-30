@@ -1,12 +1,93 @@
 .editor {
   flex-basis: 50%;
-  border-right: 1px solid #e8e7e6;
-  padding: 0.5em 2em;
+  border-right: 1px solid #E8E7E6; /* editor와 preview사이에 구분선 넣기 */
+  padding: 0.5em 2em; /* preview에 주었던 패딩 동일하게 줌 */
+  /* background-color: wheat; */
   overflow-y: auto;
 }
-
 .etitle {
   width: 100%;
   text-align: center;
-  color: #385461
+  margin-bottom: 1em;
+  color: #385461;
+}
+.form {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  margin-bottom: 1em;
+}
+.cname,
+.ccompany,
+.ctheme,
+.ctitle,
+.cemail,
+.cmessage,
+.add {
+  font-size: 0.8em;
+  width: 100%;
+  height: 2.5em;
+  border: 0;
+  padding: 0.5em;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: white;
+}
+.cname:focus,
+.ccompany:focus,
+.ctheme:focus,
+.ctitle:focus,
+.cemail:focus,
+.cmessage:focus,
+.add:focus {
+  outline: 0;
+}
+input,
+select {
+  flex: 1 1 30%;
+  height: 2.5em;
+  line-height: 1.5em;
+}
+.cmessage {
+  flex-basis: 100%;
+  height: 5em;
+}
+/* 파일 업로드 버튼 스타일 */
+.container-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+  padding: 0.5em 1em;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pink {
+  background-color: pink;
+  color: white;
+}
+.grey {
+  background-color: #ccc;
+  color: #333;
+}
+.loading {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #ccc;
+  border-top: 3px solid #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 1em;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

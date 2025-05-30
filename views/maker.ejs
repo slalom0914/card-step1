@@ -10,6 +10,30 @@
   <link rel="stylesheet" href="/stylesheets/preview.css">
   <link rel="stylesheet" href="/stylesheets/maker.css">
   <script type="module" src="/javascripts/maker.js"></script>
+  <script type="text/javascript">
+    //text는 main타입, javascript는 subtype이다 -> mime type
+    //만일 모르는 또는 표준이 아닌 mime type인 경우는 다운로드가 일어난다.
+    //import한다던가 또는 module 방식을 사용하는 것이 아니라면
+    //바닐라스크립트이면 충분하다
+    //바닐라스클립트로 백엔드 처리할게 아니면 text/javascript함
+    //함수를 선언할 수 있다.
+    //파라미터 갯수를 결정할 수 있다. 파라미터 타입을 결정할 수 있다.
+    //컴파일- 문법체크 -> XXX.java(고급언어) -> XXX.class(저급언어)
+    //타입체크한다. 자바스크립의 theme와 자바언어에 변수 결합
+    //리턴타입 - 돌려준다. 나를 호출한 곳에 돌려준다.
+    function getStyles(theme){//사용자 정의 함수 선언하기
+      switch(theme){//dark, light, colorful - 문자열타입
+        case 'dark':
+          return styles.dark
+        case 'light':
+          return styles.light
+        case 'colorful':
+          return styles.colorful
+        default:
+          throw new Error(`unknown theme: ${theme}`)
+      }//end of switch
+    }
+  </script>
 </head>
 <body>
   <section class="maker">
@@ -17,6 +41,32 @@
     <div class="container">
       <section class="editor">
         <h1 class="etitle">Card Maker</h1>
+
+        <form class="form">
+          <input type="text" class="cname" placeholder="Name" />
+          <input type="text" class="ccompany" placeholder="Company" />
+          <select class="ctheme">
+            <option value="dark">dark</option>
+            <option value="light">light</option>
+            <option value="colorful">colorful</option>
+          </select>
+          <input type="text" class="ctitle" placeholder="title" />
+          <input type="text" class="cemail" placeholder="email" />
+          <textarea class="cmessage" placeholder="message"></textarea>
+          <div class="container-div">
+            <input
+              id="fileInput"
+              type="file"
+              accept="image/*"
+              name="file"
+              style="display:none"
+            />
+            <button id="fileButton" class="button grey">No file</button>
+            <div id="loading" class="loading" style="display:none"></div>
+          </div>
+          <button type="button" class="add" onclick="addCard()">Add</button>
+        </form>
+
       </section>
       <section class="preview">
         <h1 class="ptitle">Card Preview</h1>
