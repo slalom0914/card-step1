@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maker</title>
+  <link rel="stylesheet" href="/stylesheets/card.css">
   <link rel="stylesheet" href="/stylesheets/login.css">
   <link rel="stylesheet" href="/stylesheets/editor.css">
   <link rel="stylesheet" href="/stylesheets/preview.css">
@@ -19,6 +20,9 @@
       </section>
       <section class="preview">
         <h1 class="ptitle">Card Preview</h1>
+        <ul class="cards">
+          <%-include('include/card.ejs') %>
+        </ul>
       </section>
     </div>
     <%-include('include/footer.ejs') %>
